@@ -1,6 +1,6 @@
 export default {
-    main: {
-        name: "main",
-        path: "/a"
-    }
-}
+  main: {
+    name: 'main',
+    path: '/a'
+  }
+};

@@ -1,22 +1,27 @@
 <template>
-    <div id="app">
-        {{msg}}11111222332233333332
-        {{dat}}
-        <router-view/>
-    </div>
+  <div id="app">
+    {{msg}}11111222332233333332
+    {{dat}}
+    <router-view />
+  </div>
 </template>
 <script>
 export default {
-    data() {
-        return {
-            msg: "welcome Panda!",
-            dat: Object.assign({}, {a: 4}, {b: 5})
-        }
+  data() {
+    return {
+      msg: 'welcome Panda!',
+      dat: Object.assign({}, { a: 4 }, { b: 5 })
+    };
+  },
+  methods: {
+    a() {
+      console.log('22323');
     }
-}
+  }
+};
 </script>
 <style lang="scss" scoped>
 .panda {
-    color: blueviolet;
+  color: blueviolet;
 }
 </style>
