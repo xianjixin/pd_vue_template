@@ -3,4 +3,5 @@ function add() {
   return 'a';
   var as;
   console.log('wewe');
+  console.log('wewe');
 }
