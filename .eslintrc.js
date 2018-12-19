@@ -7,6 +7,7 @@ module.exports = {
   },
   env: {
     browser: true,
+    node: true
   },
   // https://github.com/standard/standard/blob/master/docs/RULES-en.md
   extends: [
@@ -25,7 +26,10 @@ module.exports = {
     'generator-star-spacing': 0,
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
-    'no-console': process.env.NODE_ENV === 'production' ? 2 : 0,
+    'no-console': process.env.NODE_ENV === 'production' ? 1 : 0,
+    'no-undef': 0,
+    'no-unused-vars': 1,
+    'no-empty': 1,
     "prettier/prettier": [
       "error",
       {

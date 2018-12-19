@@ -15,7 +15,7 @@ export default {
   },
   methods: {
     a() {
-      console.log('22323');
+      console.log('2232423');
     }
   }
 };
