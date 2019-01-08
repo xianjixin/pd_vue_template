@@ -20,7 +20,10 @@
         "git add"
       ]
     },
-    "ignore": ["./src/static/*"]
+    "ignore": ["./src/static/*",
+      "./src/html/*",
+      "./src/styles/*"
+    ]
   },
   "keywords": [],
   "author": "",
@@ -36,6 +39,7 @@
     "@babel/plugin-transform-runtime": "7.2.0",
     "@babel/preset-env": "7.2.0",
     "@babel/preset-stage-2": "7.0.0",
+    "@babel/runtime": "^7.2.0",
     "autoprefixer": "9.4.2",
     "babel-eslint": "^10.0.1",
     "babel-loader": "8.0.4",

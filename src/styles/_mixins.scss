@@ -1,0 +1,136 @@
+// 宽高设置
+@mixin WH($width, $height) {
+  @include W($width);
+  @include H($height);
+}
+
+@mixin W($w) {
+  @if $w==100% {
+    width: $w;
+  }
+
+  @else {
+    width: $w + px;
+  }
+}
+
+@mixin H($h) {
+  @if $h==100% {
+    height: $h;
+  }
+
+  @else {
+    height: $h + px;
+  }
+}
+
+@mixin i-icon($width, $height) {
+  i {
+    display: inline-block;
+    @include WH($width, $height);
+
+    img {
+      @include WH(100%, 100%);
+    }
+  }
+}
+
+// 背景图
+@mixin bgc-img($url, $size:100%) {
+  background-image: url($url);
+  background-repeat: no-repeat;
+
+  @if $size==cover {
+    background-size: cover;
+  }
+
+  @else {
+    background-size: 100%;
+  }
+}
+
+// 图标 :after 设置
+@mixin icon-img($url, $width, $height) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include WH($width, $height);
+
+  &:after {
+    @include WH(100%, 100%);
+    content: url($url);
+  }
+}
+
+// 图标背景图 和 选中效果
+@mixin img-active($url, $activeUrl) {
+  @include bgc-img($url);
+
+  &:active {
+    @include bgc-img($activeUrl);
+  }
+}
+
+// 垂直居中
+@mixin position-center($position) {
+  position: $position;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// 字体边框
+@mixin font-border($size, $color) {
+  -webkit-text-stroke: $size $color;
+  text-stroke: $size $color;
+}
+
+// 字体颜色大小
+@mixin font-color($size, $color, $bold:initial) {
+  font-size: $size;
+  color: $color;
+
+  @if $bold==bold {
+    font-weight: bold;
+  }
+
+  @else if $bold==bolder {
+    font-weight: bolder;
+  }
+}
+
+%flex-align {
+  display: flex;
+  align-items: center;
+}
+
+%flex-column-center {
+  @extend %flex-align;
+  flex-direction: column;
+  justify-content: center;
+}
+
+%flex-row-center {
+  @extend %flex-align;
+  flex-direction: row;
+  justify-content: center;
+
+}
+
+%flex-row-start {
+  @extend %flex-align;
+  flex-direction: row;
+  justify-content: start;
+}
+
+%flex-column-between {
+  @extend %flex-align;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+%flex-row-between {
+  @extend %flex-align;
+  flex-direction: row;
+  justify-content: space-between;
+}
