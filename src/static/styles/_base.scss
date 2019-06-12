@@ -1,252 +1,90 @@
-
 @import "variable.scss";
 @import "function.scss";
 
-/*
-** 基础样式
-*/
-
-// 有渐变的boder
-%shade-border {
-    // -webkit-border-image: linear-gradient(#ffd897,#c09448) 5 5;
-    // -moz-border-image: linear-gradient(#ffd897,#c09448) 5 5;
-    border:r(0.5) solid $border-ffff3;
-}
-%shade-border-eac17d {
-    // -webkit-border-image: linear-gradient(#ffd897,#c09448) 5 5;
-    // -moz-border-image: linear-gradient(#ffd897,#c09448) 5 5;
-    border-width:r(0.5);
-    border-style:solid;
-    border-top-color:#C1A87A;
-    border-bottom-color:#C1A87A;
-    border-right-color:#C1A87A;
-    border-left-color:#C1A87A;
-}
-%boder-fff{
-    border-width:r(0.5);
-    border-style:solid;
-    border-top-color:$border-ffff3;
-    border-bottom-color:$border-ffff3;
-    border-right-color:$border-ffff3;
-    border-left-color:$border-ffff3;
-}
-%border-bottom-fff3{
-    border-bottom:r(0.5) solid rgba(225, 225, 225, 0.2);
+* {
+  box-sizing: border-box;
+  word-break: break-all;
+  word-wrap: break-word;
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
 }
 
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+input {
+  outline: none;
+  padding: 0 5px;
+  border: none;
+  background: none;
+}
+
+textarea {
+  resize: none;
+  padding: 5px;
+  outline: none;
+}
+
+i {
+  font-style: normal;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  table-layout: fixed;
+}
+// number类型的input不显示三角形
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+// 浮动
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+.clearfix {
+  zoom: 1;
+  > * {
+    float: left;
+  }
+}
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  clear: both;
+  display: block;
+}
 
 // 超出隐藏
-%text-overflow{
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+.overfont {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-.overfont{
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+// 文字颜色
+.c-red {
+  color: $color-red;
 }
-
-
-/**
-** 公共基础样式class
-*/
-
-// 有渐变的黄色 title
-.ft-small-shade {
-    background-image: linear-gradient(to bottom, $font-gradual-top, $font-gradual-bottom);
-    -webkit-background-clip:text; 
-    -webkit-text-fill-color:transparent; 
-    color: $font-gradual-top;
-    font-size: r($font-size-small);
-    font-weight: bold;
-    margin-bottom: r(20);
-    margin-top: r(35);
+//复写element
+.el-form-item {
+  margin-top: 15px;
 }
-.ft-medium-shade {
-    background-image: linear-gradient(to bottom, $font-gradual-top, $font-gradual-bottom);
-    -webkit-background-clip:text; 
-    -webkit-text-fill-color:transparent; 
-    color: $font-gradual-top;
-    font-size: r($font-size-medium);
-    font-weight: bold;
-    margin-bottom: r(20);
-    margin-top: r(35);
-    // letter-spacing: r(2)
-}
-.ft-large-shade {
-    background-image: linear-gradient(to bottom, $font-gradual-top, $font-gradual-bottom);
-    -webkit-background-clip:text; 
-    -webkit-text-fill-color:transparent; 
-    color: $font-gradual-top;
-    font-size: r($font-size-large);
-    font-weight: bold;
-}
-
-// 不渐变的黄色文字
-.ft-medium-yellow{
-    color: rgb(227,188,82);
-    font-size: r($font-size-medium);
-    margin-bottom: r(20);
-    margin-top: r(35);
-}
-// 不渐变的黄色文字 加粗
-.ft-small-yellow-bold{
-    color: rgb(227,188,82);
-    font-size: r($font-size-small);
-    font-weight: bold
-}
-.ft-large-yellow-bold{
-    color: rgb(227,188,82);
-    font-size: r($font-size-large);
-    font-weight: bold
-}
-
-// 蓝色文字
-.f-medium-3ccde6{
-    color: $color-3ccde6;
-    font-size: r($font-size-medium);
-}
-.f-small-3ccde6{
-    color: $color-3ccde6;
-    font-size: r($font-size-medium);
-}
-.f-xssmall-3ccde6{
-    color: $color-3ccde6;
-    font-size: r($font-size-xssmall);
-}
-// 有下划线的蓝色文字
-.f-small-line-3ccde6{
-    color: $color-3ccde6;
-    font-size: r($font-size-small);
-    text-decoration: underline;
-}
-// 灰白色字体
-.f-medium-feffff{
-    color: $color-a3a7a9;
-    font-size: r($font-size-medium);
-}
-.f-small-feffff{
-    color: $color-a3a7a9;
-    font-size: r($font-size-small);
-}
-.f-xxsmall-feffff{
-    color: $color-a3a7a9;
-    font-size: r($font-size-xxsmall);
-}
-.f-xxxxsmall-feffff{
-    color: $color-a3a7a9;
-    font-size: r($font-size-xxxxsmall);
-}
-// 百分之0.5的白色字体
-.f-large-fff5{
-    color: $color-fff5;
-    font-size: r($font-size-large);
-}
-.f-medium-fff5{
-    color: $color-fff5;
-    font-size: r($font-size-medium);
-}
-.f-small-fff5{
-    color: $color-fff5;
-    font-size: r($font-size-small);
-}
-.f-xxsmall-fff5{
-    color: $color-fff5;
-    font-size: r($font-size-xxsmall);
-}
-.f-xssmall-fff5{
-    color: $color-fff5;
-    font-size: r($font-size-xssmall);
-}
-.f-xxxxsmall-fff5{
-    color: $color-fff5;
-    font-size: r($font-size-xxxxsmall);
-}
-// 白色加粗字体
-.f-medium-fff{
-    font-size: r($font-size-medium);
-    color: $color-fff;
-    font-weight: bold;
-}
-.f-small-fff{
-    font-size: r($font-size-small);
-    color: $color-fff;
-}
-.f-dmedium-fff{
-    font-size: r($font-size-medium);
-    color: $color-fff;
-}
-.f-xssmall-fff{
-    font-size: r($font-size-xssmall);
-    color: $color-fff;
-}
-
-
-// 有背景阴影的字体
-.f-xxsmall-shadow{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    display: inline-block;
-    padding: r(18);
-    color: $color-fff;
-    font-size: r($font-size-xxsmall);
-    background: $backgroundColor-00006;
-    @extend %text-overflow;
-}
-.f-small-shadow{
-    position: absolute;
-    bottom: 0;
-    left: r(0);
-    right: r(0);
-    display: inline-block;
-    padding: r(7) r(10);
-    color: $color-fff;
-    font-size: r($font-size-small);
-    background: $backgroundColor-00006;
-    @extend %text-overflow;
-}
-// 红色提示文字
-.f-xssmall-red{
-    color: $color-red;
-    font-size: r($font-size-xssmall);
-}
-.c-red{
-    color: $color-red;
-}
-.c-green{
-    color: $color-green;
-}
-.c-yellow{
-    color: $font-gradual-top;
-}
-.italic{
-    font-style: italic;
-}
-.nocontent{
-    padding-top:r(50);
-    text-align: center;
-    font-size: r(28);
-    opacity: 0.6;
-}
-.wordWrap
-{
-    word-wrap:break-word;
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
