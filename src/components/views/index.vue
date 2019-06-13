@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    {{msg}}11111222332233333332
-    {{dat}}
+    {{ msg }}11111222332233333332
+    {{ dat }}
     <router-view />
   </div>
 </template>

@@ -1,8 +1,8 @@
 <template>
   <div class="panda">
-    <div class="sas">{{msg}}</div>
-    <div class="box"
-         @click="clickBox">ewkkkjo
+    <div class="sas">{{ msg }}</div>
+    <div class="box" @click="clickBox">
+      ewkkkjo
       <div>32</div>
     </div>
   </div>
