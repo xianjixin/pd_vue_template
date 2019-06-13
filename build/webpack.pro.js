@@ -16,7 +16,7 @@ module.exports = webpackMerge(commonConfig, {
             root: path.resolve(__dirname, "../")
         }),
         new MiniCssExtractPlugin({
-            filename: "style/[name].css"
+            filename: "style/[name].[chunkhash].css"
         }),
     ],
 })
